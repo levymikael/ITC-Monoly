@@ -93,6 +93,7 @@ Monopoly.handleTurn = function () {
         Monopoly.handlePayRent(player, playerCell);
     } else if (playerCell.is(".go-to-jail")) {
         Monopoly.handleGoToJail(player);
+        
     } else if (playerCell.is(".chance")) {
         Monopoly.handleChanceCard(player);
     } else if (playerCell.is(".community")) {
@@ -207,7 +208,7 @@ Monopoly.handleCommunityCard = function (player) {
     Monopoly.showPopup("community");
 };
 
-
+// transfers the player icon to the jail cell and put a sad smiley face
 Monopoly.sendToJail = function (player) {
     player.addClass("jailed");
     player.attr("data-jail-time", 1);
@@ -270,10 +271,6 @@ Monopoly.handleBuy = function (player, propertyCell, propertyCost) {
     }
 };
 
-
-
-
-
 Monopoly.handleAction = function (player, action, amount) {
     console.log(action)
     switch (action) {
@@ -291,10 +288,6 @@ Monopoly.handleAction = function (player, action, amount) {
     };
     Monopoly.closePopup();
 };
-
-
-
-
 
 Monopoly.createPlayers = function (numOfPlayers) {
     var startCell = $(".go");
